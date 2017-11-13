@@ -1,0 +1,51 @@
+<div class = container>
+  <form (ngSubmit)="onSubmit(f)"#f="ngForm">
+  <div class="row">
+  <div class="col-lg-3 form-group">
+    <label  for="amount">team name</label>
+    <input [(ngModel)]="teamToEdit.name" [disabled]="true"  name="teamName" type="text" id="amount" class="form-control">
+  </div>
+    <div class="col-lg-3 form-group">
+      <label for="status">status</label>
+      <input [ngModel]="teamToEdit.status" name="teamStatus" type="text" id="status" class="form-control">
+  </div>
+  </div>
+    <div class="row">
+  <div class="col-lg-3 form-group">
+      <label for="coach">Coach</label>
+      <input [ngModel]="teamToEdit.coach" name="teamCoach" type="text" id="coach" class="form-control">
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 form-group">
+        <label for="defencePlayers">Defence Players </label>
+        <input [ngModel]="teamToEdit.defencePlayers" name="defencePlayers" type="text" id="defencePlayers" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 form-group">
+        <label for="MidfieldPlayers">Midfield Players </label>
+        <input [ngModel]="teamToEdit.midfieldPlayers" name="midfieldPlayers" type="text" id="MidfieldPlayers" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 form-group">
+        <label for="attackPlayers">Attack Players </label>
+        <input [ngModel]="teamToEdit.attackPlayers" name="attackPlayers" type="text" id="attackPlayers" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+    <img
+    [src]="teamToEdit.imageUrl"
+    alt="{{ teamToEdit.name }}"
+    class="img-responsive"
+    style="max-height: 150px;">
+    </div>
+  <hr>
+  <button class ="btn btn-success" type = "submit"> Submit Changes </button>
+  <button class="btn btn-danger" routerLink="/teams" >Go Back</button>
+</form>
+</div>
+
+
+

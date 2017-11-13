@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>Contact Us</h1>
+  <hr>
+  <h4 style="color:teal"> all * fields are mandatory </h4>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="name">*Name</label>
+      <input ngModel type="text" class="form-control" id="name" name="name" required >
+    </div>
+    <div class="form-group">
+      <label for="email">*Email</label>
+      <input ngModel name="email" type="email" class="form-control" id="email" required email #email="ngModel" >
+      <span class ="help-block" *ngIf="email.invalid && email.touched">please enter a valid email!</span>
+    </div>
+    <div class="form-group">
+      <label for="city">*City</label>
+      <select class="form-control"  id="city"
+              ngModel
+              required
+             name="city">
+        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="comment">*Comment:</label>
+      <textarea ngModel class="form-control" rows="5" id="comment" name="comment" required></textarea>
+    </div>
+    <label >Gender:</label>
+    <div class="radio" *ngFor="let gender of genders">
+      <label> <input type="radio" name="gender" ngModel [value]="gender">{{gender}}</label>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-success" [disabled]="!f.valid">Submit</button>
+  </form>
+  <br>
+  <img width="500" src="http://www.dorigroup.co.il/media/k2/items/cache/fc1da7257992fc36032e11db3df7a664_XL.jpg">
+</div>
+

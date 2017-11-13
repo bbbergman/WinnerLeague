@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"> Winner League</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <!--<ng-template [ngIf]="authService.isAuthenticated()">-->
+      <li routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}"><a routerLink="">Home</a></li>
+      <li routerLinkActive="active"> <a routerLink="teams">Teams</a></li>
+        <li routerLinkActive="active"> <a routerLink="shop">Shop</a></li>
+        <li routerLinkActive="active"> <a routerLink="cart">Shopping Cart</a></li>
+        <!--</ng-template>-->
+      <!--<li><a href="#">Page 2</a></li>-->
+      <!--<li><a href="#">Page 3</a></li>-->
+    </ul>
+    <ul class="nav navbar-nav navbar-right"  >
+      <ng-template [ngIf]="!authService.isAuthenticated()">
+        <li><a style="color:white;background-color:green" routerLink="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a> </li>
+        <li><a routerLink="signIn"><span class="glyphicon glyphicon-log-in"></span> Login</a> </li>
+        </ng-template>
+        <li><a style="color:white;background-color:red;cursor: pointer"
+               (click)="onLogout()" *ngIf="authService.isAuthenticated()"><strong>
+                <span class="glyphicon glyphicon-log-out"></span>Logout</strong></a></li>
+      <li><a style="color:white; background-color:cadetblue" routerLink="contact"><strong>Contact</strong></a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+

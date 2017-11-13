@@ -1,0 +1,16 @@
+<div *ngIf = show>
+  <img
+    [src]="team.imageUrl"
+    alt="{{ team.name }}"
+    class="img-responsive"
+    style="max-height: 60px;">
+  <br>
+  <p> <strong>Team Name: </strong>{{team.name}} </p>
+  <p> <strong>Team Status: </strong>{{team.status}} </p>
+  <p> <strong>Coach Name: </strong>{{team.coach}} </p>
+  <p> <strong>Defence Players: </strong>{{team.defencePlayers}} </p>
+  <p> <strong>Midfield Players: </strong>{{team.midfieldPlayers}} </p>
+  <p> <strong>Attack Players: </strong>{{team.attackPlayers}} </p>
+  <button class="btn-info" (click)="editClick()">Edit Team Details</button>
+</div>
+

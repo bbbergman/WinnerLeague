@@ -1,0 +1,42 @@
+<div class ="container">
+<div class="jumbotron">
+  <h1 style="color: white"> Teams  </h1>
+</div>
+<hr>
+  <div class="row">
+  <div class="col-md-5">
+  <a
+    routerLink="/teams"
+    class="list-group-item clearfix"
+    *ngFor="let team of teams; let i = index"
+    (click)="onTeamClick(i)" >
+    <div class="pull-left">
+      <h3 class="list-group-item-heading">{{ team.name }}</h3>
+      <!--<p class="list-group-item-text">{{ team.status }}</p>-->
+    </div>
+    <div class="pull-right">
+        <img
+          [src]="team.imageUrl"
+          alt="{{ team.name }}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </div>
+  </a>
+  </div>
+  <div class="col-md-offset-5">
+    <app-team></app-team>
+  </div>
+  </div>
+</div>
+
+<!--<ul class="list-group">-->
+  <!--<li class="list-group-item "-->
+  <!--*ngFor = "let team of teams">Team Name: {{ team.name }} &lt;!&ndash;|| Team Status:  {{ team.status }}&ndash;&gt;-->
+    <!--&lt;!&ndash;<img src={{team.imageUrl}} alt='' style="width:200px;height:200px;">&ndash;&gt;-->
+  <!--</li>-->
+<!--</ul>-->
+    <!--&lt;!&ndash;<app-team&ndash;&gt;-->
+    <!--&lt;!&ndash;(teamCreated) = "onTeamCreated($event)"&ndash;&gt;-->
+      <!--&lt;!&ndash;*ngFor = "let team of teams" [teamName]="team.name"> </app-team>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--</div>-->

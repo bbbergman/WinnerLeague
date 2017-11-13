@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="jumbotron" style="background-image:url('http://livesoccer.co.il/wp-content/uploads/2016/07/football-452569_1920111.jpg')">
+    <h1 style="color: white"> Shopping Cart  </h1>
+  </div>
+  <div class="row">
+    <div class="col col-md-1">
+    <button class="btn btn-success btn-lg" (click)="checkout()">Check Out</button>
+    </div>
+    <div class="col-md-offset-7">
+      <p>  <strong>total price:{{sum}}$</strong></p>
+    </div>
+  </div>
+  <hr>
+  <div id="products" class="row list-group">
+    <div class="item  col-xs-4 col-lg-4" *ngFor="let shoppingItem of ItemsBoughtArray; let i =index">
+      <div class="thumbnail">
+        <img  class="group list-group-image" src="{{shoppingItem.itemImageUrl}}" alt=""  />
+        <div class="caption">
+          <h4 class="group inner list-group-item-heading">
+            {{shoppingItem.itemTitle}}</h4>
+          <p class="group inner list-group-item-text">
+            {{shoppingItem.itemDescription}}</p>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <p class="lead">
+                {{shoppingItem.itemPrice}}$</p>
+              <button  class="btn btn-danger" (click)="removeFromCart(i)">remove from cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
