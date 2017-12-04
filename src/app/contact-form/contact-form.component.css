@@ -18,9 +18,9 @@ textarea.ng-invalid.ng-touched
 {
   border:1px solid red;
 }
-img {
-  display: block;
-  margin: auto;
-  width: 40%;
+.jumbotron {
+  background-position:center;
+  background-size: cover;
 }
+
 

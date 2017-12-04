@@ -1,5 +1,7 @@
 <div class="container">
-  <h1>Contact Us</h1>
+  <div class="jumbotron" style="background-image:url('http://www.theboltonnews.co.uk/resources/images/3453902/')">
+    <h1> Contact Us </h1>
+  </div>
   <hr>
   <h4 style="color:teal"> all * fields are mandatory </h4>
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
@@ -33,6 +35,5 @@
     <button type="submit" class="btn btn-success" [disabled]="!f.valid">Submit</button>
   </form>
   <br>
-  <img width="500" src="http://www.dorigroup.co.il/media/k2/items/cache/fc1da7257992fc36032e11db3df7a664_XL.jpg">
 </div>
 

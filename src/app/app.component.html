@@ -5,12 +5,12 @@
       <a class="navbar-brand"> Winner League</a>
     </div>
     <ul class="nav navbar-nav">
-      <!--<ng-template [ngIf]="authService.isAuthenticated()">-->
+      <ng-template [ngIf]="authService.isAuthenticated()">
       <li routerLinkActive="active"[routerLinkActiveOptions]="{exact:true}"><a routerLink="">Home</a></li>
       <li routerLinkActive="active"> <a routerLink="teams">Teams</a></li>
         <li routerLinkActive="active"> <a routerLink="shop">Shop</a></li>
         <li routerLinkActive="active"> <a routerLink="cart">Shopping Cart</a></li>
-        <!--</ng-template>-->
+        </ng-template>
       <!--<li><a href="#">Page 2</a></li>-->
       <!--<li><a href="#">Page 3</a></li>-->
     </ul>
