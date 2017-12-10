@@ -22,7 +22,7 @@ export class ShopComponent implements OnInit {
     const dialogRef = this.modal.alert()
       .size('sm')
       .showClose(true)
-      .title('item successfully added to shopping cart!')
+      .title('Item successfully added to shopping cart!')
       .body('')
       .open();
   }

@@ -41,6 +41,15 @@ export class TeamsService {
       defencePlayers: ['ben haim'],
       midfieldPlayers: ['azili'],
       attackPlayers: ['atar', 'kiartenson']
+    },
+    {
+      name: 'Beitar Jerusalem',
+      status: '3 place',
+      imageUrl: 'https://img.wcdn.co.il/f_auto,w_300,t_53/2/4/5/8/2458702-46.jpg',
+      coach: '',
+      defencePlayers: [''],
+      midfieldPlayers: ['benayoun'],
+      attackPlayers: ['shechter']
     }
   ];
   getTeams() {

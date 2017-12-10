@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.ItemsBoughtArray = this.shoppingItemService.getItemsBoughtArray();
-     setInterval(() => {this.sum = this.shoppingItemService.returnTotalPrice(); }, 100);
+     setInterval(() => {this.sum = this.shoppingItemService.returnTotalPrice(); }, 500);
   }
   removeFromCart(id: number) {
     this.shoppingItemService.getItemsBoughtArray().splice(id, 1);

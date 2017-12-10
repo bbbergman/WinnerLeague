@@ -21,7 +21,7 @@ export class TeamComponent implements OnInit {
     this.team = this.teamsService.getTeam(teamId) ; });
   }
 
-  editClick(team) {
+  editClick() {
     // this.teamsService.editTeam.emit(this.teamId);
     this.router.navigate(['/edit', this.teamId]);
   }

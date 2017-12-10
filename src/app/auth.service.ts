@@ -42,12 +42,6 @@ export class AuthService {
             firebase.auth().currentUser.getIdToken()
             .then(
               (token: string) => this.token = token);
-            const dialogRef = this.modal.alert()
-              .size('lg')
-              .showClose(true)
-              .title('you are logged In!')
-              .body('enjoy')
-              .open();
           })
         .catch(error => {
           console.log(error);
@@ -65,12 +59,6 @@ export class AuthService {
   logout() {
     firebase.auth().signOut();
     this.token = null ;
-    const dialogRef = this.modal.alert()
-      .size('lg')
-      .showClose(true)
-      .title('logged out successfully!')
-      .body('')
-      .open();
     this.router.navigate(['']);
   }
 }

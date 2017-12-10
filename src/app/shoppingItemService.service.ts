@@ -27,6 +27,18 @@ export class ShoppingItemService {
       itemPrice: 20,
       itemImageUrl: 'http://shop.mhaifafc.com/pics/pic/IMG_6853.jpg'
     },
+    {
+      itemTitle: 'Hapoel Beer Sheva away shirt',
+      itemDescription: 'offical shirt 2017',
+      itemPrice: 40,
+      itemImageUrl: 'https://shop.hbsfc.co.il/application/assets/img/pictures/59a826428b8ee.jpg'
+    },
+    {
+      itemTitle: 'Maccabi Haifa  pre-game shirt',
+      itemDescription: 'offical shirt 2017',
+      itemPrice: 35,
+      itemImageUrl: 'http://shop.mhaifafc.com/pics/trainingkit3.png'
+    },
   ];
   getItemsBoughtArray() {
     return this.ItemsBoughtArray;

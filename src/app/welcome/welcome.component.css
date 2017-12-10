@@ -1,6 +1,5 @@
-.jumbotron {
-  box-sizing: border-box;
-  background-image: url("http://www.dream-wallpaper.com/free-wallpaper/nature-wallpaper/grass-football-pitches-wallpaper/1440x900/free-wallpaper-16.jpg");
-  background-position: center;
-  background-size: cover;
+.container{
+  background-image:url("http://www.isramedia.net/images/users/2243/141dd69c057bcd65feb8632df05791fc.jpg");
+  height: 800px;
+  width: auto;
 }
