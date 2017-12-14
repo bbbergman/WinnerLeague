@@ -20,8 +20,8 @@ export class TeamsService {
       status: 'league2',
       imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Hapoel_Tel_Aviv_New_Badge.jpg',
       coach: 'tbd',
-      defencePlayers: ['lozer1'],
-      midfieldPlayers: ['lozer2', 'lozer3'],
+      defencePlayers: ['player'],
+      midfieldPlayers: ['player2', 'player3'],
       attackPlayers: ['hirch']
     },
     {
