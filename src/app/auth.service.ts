@@ -17,7 +17,6 @@ export class AuthService {
           firebase.auth().currentUser.getIdToken()
             .then(
               (token: string) => this.token = token);
-          debugger
           this.router.navigate(['']);
           const dialogRef = this.modal.alert()
             .size('lg')
