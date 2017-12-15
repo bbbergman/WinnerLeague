@@ -22,8 +22,8 @@ export class TeamsService {
       imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/63/Hapoel_Tel_Aviv_New_Badge.jpg',
       TeamImageUrl:'http://www.htafc.co.il/wp-content/uploads/2017/12/IMG_5752.jpg',
       coach: 'tbd',
-      defencePlayers: ['lozer1'],
-      midfieldPlayers: ['lozer2', 'lozer3'],
+      defencePlayers: ['player'],
+      midfieldPlayers: ['player2', 'player3'],
       attackPlayers: ['hirch']
     },
     {
