@@ -12,5 +12,9 @@
   <p> <strong>Midfield Players: </strong>{{team.midfieldPlayers}} </p>
   <p> <strong>Attack Players: </strong>{{team.attackPlayers}} </p>
   <button class="btn-info" (click)="editClick()">Edit Team Details</button>
+  <img id="teamImage"
+    [src]="team.TeamImageUrl"
+    alt="{{ team.name }}"
+    class="img-responsive">
 </div>
 

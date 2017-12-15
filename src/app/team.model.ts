@@ -2,6 +2,7 @@ export class Team {
   public name: string;
   public status: string;
   public imageUrl: string;
+  public TeamImageUrl: string;
   public coach: string;
   public defencePlayers: string[] ;
   public midfieldPlayers: string[] ;
