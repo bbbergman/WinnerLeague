@@ -1,0 +1,45 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flex-container>div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding:20px;
+  cursor: pointer;
+}
+.mainImage{
+  opacity: 0.5;
+  max-width:300px;
+  max-height:300px;
+
+}
+.mainImage:hover{
+  opacity: 1;
+}
+a{
+  text-decoration: none;
+}
+
+.jumbotron {
+  background-size: cover;
+  background-image:url('http://livesoccer.co.il/wp-content/uploads/2016/07/football-452569_1920111.jpg');
+}
+.secondImage{
+  float:right;
+  max-width:400px;
+  max-height:400px;
+}
+#playerHeader{
+  color:white;
+  background-color:black;
+  padding: 30px;
+}
+#clubLogo{
+  max-width:100px;
+  max-height:100px;
+  margin-right:20px;
+}
+

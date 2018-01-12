@@ -19,6 +19,8 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { ShopComponent } from './shop/shop.component';
 import {ShoppingItemService} from "./shoppingItemService.service";
 import { CartComponent } from './cart/cart.component';
+import { TopPlayersComponent } from './top-players/top-players.component';
+import {playersService} from "./playersService.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { CartComponent } from './cart/cart.component';
     SignupComponent,
     SignInComponent,
     ShopComponent,
-    CartComponent
+    CartComponent,
+    TopPlayersComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { CartComponent } from './cart/cart.component';
     ModalModule.forRoot(),
     BootstrapModalModule
   ],
-  providers: [TeamsService, AuthService, ShoppingItemService],
+  providers: [TeamsService, AuthService, ShoppingItemService,playersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

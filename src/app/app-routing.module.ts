@@ -11,6 +11,7 @@ import {SignupComponent} from "./auth/signup/signup.component";
 import {SignInComponent} from "./auth/sign-in/sign-in.component";
 import {ShopComponent} from "./shop/shop.component";
 import {CartComponent} from "./cart/cart.component";
+import {TopPlayersComponent} from "./top-players/top-players.component";
 
 const appRoutes: Routes = [
   // path: '', component: AppComponent, pathMatch: 'full'},
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'signIn', component: SignInComponent},
   {path: 'shop', component: ShopComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'cart', component: CartComponent},
+  {path: 'topPlayers', component: TopPlayersComponent}
   ];
 
 @NgModule({
