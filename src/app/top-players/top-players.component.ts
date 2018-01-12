@@ -9,24 +9,27 @@ import {player} from "../player.model";
 })
 export class TopPlayersComponent implements OnInit {
   showPlayerDetails = false;
-  players:player[]= [];
-  player:player;
+  players: player[] = [];
+  player: player;
 
-  constructor(private playersService:playersService) { }
+  constructor(private playersService: playersService) {
+  }
 
   ngOnInit() {
     this.players = this.playersService.getPlayers();
   }
 
-  getDetails(index:number) {
+  getDetails(index: number) {
     this.showPlayerDetails = true;
     this.player = this.players[index];
   }
-  getFontColor(player:player) {
-    return player.team ==='hapoel beer sheva' ? 'red' : 'yellow';
+
+  getFontColor(player: player) {
+    return player.team === 'hapoel beer sheva' ? 'red' : 'yellow';
 
   }
-  getBackgroundColor(player:player) {
-    return player.team ==='hapoel beer sheva' ? 'black' : 'darkblue';
 
+  getBackgroundColor(player: player) {
+    return player.team === 'hapoel beer sheva' ? 'black' : 'darkblue';
   }
+}
