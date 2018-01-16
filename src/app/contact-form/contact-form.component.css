@@ -2,6 +2,9 @@ h1
 {
   color:navy;
 }
+h4{
+  color:teal;
+}
 label
 {
   color:teal;
@@ -19,6 +22,7 @@ textarea.ng-invalid.ng-touched
   border:1px solid red;
 }
 .jumbotron {
+  background-image:url('http://www.theboltonnews.co.uk/resources/images/3453902/');
   background-position: center;
   background-size: cover;
 }

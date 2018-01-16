@@ -1,6 +1,6 @@
 <div class ="container">
 <div class="jumbotron">
-  <h1 style="color: white"> Teams  </h1>
+  <h1> Teams  </h1>
 </div>
 <hr>
   <div class="row">
@@ -12,14 +12,12 @@
     (click)="onTeamClick(i)" >
     <div class="pull-left">
       <h3 class="list-group-item-heading">{{ team.name }}</h3>
-      <!--<p class="list-group-item-text">{{ team.status }}</p>-->
     </div>
     <div class="pull-right">
         <img
           [src]="team.imageUrl"
           alt="{{ team.name }}"
-          class="img-responsive"
-          style="max-height: 50px;">
+          class="img-responsive">
       </div>
   </a>
   </div>
@@ -29,14 +27,4 @@
   </div>
 </div>
 
-<!--<ul class="list-group">-->
-  <!--<li class="list-group-item "-->
-  <!--*ngFor = "let team of teams">Team Name: {{ team.name }} &lt;!&ndash;|| Team Status:  {{ team.status }}&ndash;&gt;-->
-    <!--&lt;!&ndash;<img src={{team.secondImageUrl}} alt='' style="width:200px;height:200px;">&ndash;&gt;-->
-  <!--</li>-->
-<!--</ul>-->
-    <!--&lt;!&ndash;<app-team&ndash;&gt;-->
-    <!--&lt;!&ndash;(teamCreated) = "onTeamCreated($event)"&ndash;&gt;-->
-      <!--&lt;!&ndash;*ngFor = "let team of teams" [teamName]="team.name"> </app-team>&ndash;&gt;-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-<!--</div>-->
+

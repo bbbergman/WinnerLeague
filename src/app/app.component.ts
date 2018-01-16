@@ -20,7 +20,4 @@ export class AppComponent implements OnInit {
   onLogout() {
    this.authService.logout();
   }
-  // onTeamsButtonClick() {
-  //   this.router.navigate(['/teams']);
-  // }
 }

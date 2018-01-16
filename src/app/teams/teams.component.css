@@ -2,4 +2,9 @@
   background-image: url("https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.0-9/22688792_608824825908554_8805067843743464631_n.jpg?oh=2eec4ebebe85a0f8b454d4d948749070&oe=5A6637E6");
   background-position: center;
   background-size: cover;
+  color: white
 }
+img{
+  max-height: 50px;
+}
+

@@ -23,7 +23,6 @@ export class TopPlayersComponent implements OnInit {
     this.showPlayerDetails = true;
     this.player = this.players[index];
   }
-
   getFontColor(player: player) {
     return player.team === 'hapoel beer sheva' ? 'red' : 'yellow';
 

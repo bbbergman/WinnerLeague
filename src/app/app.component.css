@@ -2,3 +2,22 @@
   background: url("https://upload.wikimedia.org/wikipedia/he/9/96/Ligat_winner_football.png") right / contain no-repeat;
   width: 200px;
 }
+#signUp{
+  color:white;
+  background-color:green;
+}
+#signUp:hover{
+  color:black;
+}
+#logout{
+  color:white;
+  background-color:red;
+  cursor: pointer;
+}
+#contact{
+  color:white;
+  background-color:cadetblue;
+}
+#contact:hover{
+  color:black;
+}
