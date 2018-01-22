@@ -21,6 +21,8 @@ import {ShoppingItemService} from "./shoppingItemService.service";
 import { CartComponent } from './cart/cart.component';
 import { TopPlayersComponent } from './top-players/top-players.component';
 import {playersService} from "./playersService.service";
+import {HttpModule} from "@angular/http";
+import {httpService} from "./httpService.service";
 
 @NgModule({
   declarations: [
@@ -42,9 +44,10 @@ import {playersService} from "./playersService.service";
     AppRoutingModule,
     FormsModule,
     ModalModule.forRoot(),
-    BootstrapModalModule
+    BootstrapModalModule,
+    HttpModule
   ],
-  providers: [TeamsService, AuthService, ShoppingItemService,playersService],
+  providers: [TeamsService, AuthService, ShoppingItemService,playersService,httpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

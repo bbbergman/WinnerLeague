@@ -16,7 +16,9 @@ export class TopPlayersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.players = this.playersService.getPlayers();
+    this.playersService.getPlayers().then((data) => {
+      this.players = data;
+    });
   }
 
   getDetails(index: number) {

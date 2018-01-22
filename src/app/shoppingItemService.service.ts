@@ -1,49 +1,29 @@
 import {ShoppingItem} from "./shoppingItem.model";
+import {httpService} from "./httpService.service";
+import {Injectable} from "@angular/core";
 
+@Injectable()
 export class ShoppingItemService {
+  constructor(private httpService: httpService){}
+
+  private shoppingItemsUrl = "https://my-project-c46a9.firebaseio.com/ShoppingItems.json";
+  private shoppingItemsArray: ShoppingItem[] ;
   private ItemsBoughtArray: ShoppingItem[] = [];
-  private shoppingItemsArray: ShoppingItem[] = [
-    {
-      itemTitle: 'Maccabi Haifa shirt',
-      itemDescription: 'offical shirt 2017',
-      itemPrice: 50,
-      itemImageUrl: 'http://shop.mhaifafc.com/pics/secondkit.png'
-    },
-    {
-      itemTitle: 'Maccabi Tel Aviv shirt',
-      itemDescription: 'offical shirt 2017',
-      itemPrice: 40,
-      itemImageUrl: 'http://shop.maccabi-tlv.co.il/prdPics/products/gallery_2742_prd_image_1.jpg'
-    },
-    {
-      itemTitle: 'Hapoel Beer Sheva shirt',
-      itemDescription: 'offical shirt 2017',
-      itemPrice: 60,
-      itemImageUrl: 'https://shop.hbsfc.co.il/application/assets/img/pictures/59a42b888b02f.jpg'
-    },
-    {
-      itemTitle: 'Maccabi Haifa scarf',
-      itemDescription: 'winter collection',
-      itemPrice: 20,
-      itemImageUrl: 'http://shop.mhaifafc.com/pics/pic/IMG_6853.jpg'
-    },
-    {
-      itemTitle: 'Hapoel Beer Sheva away shirt',
-      itemDescription: 'offical shirt 2017',
-      itemPrice: 40,
-      itemImageUrl: 'https://shop.hbsfc.co.il/application/assets/img/pictures/59a826428b8ee.jpg'
-    },
-    {
-      itemTitle: 'Maccabi Haifa  pre-game shirt',
-      itemDescription: 'offical shirt 2017',
-      itemPrice: 35,
-      itemImageUrl: 'http://shop.mhaifafc.com/pics/trainingkit3.png'
-    },
-  ];
+
+  getShoppingItems(): Promise<any> {
+    return this.httpService.getDataFromServer(this.shoppingItemsUrl).then((data) => {
+      this.shoppingItemsArray = data;
+      return this.shoppingItemsArray.slice();
+    })
+      .catch(error => {
+        console.log("error in get shopping items :"+error);
+      });
+  }
+
   getItemsBoughtArray() {
     return this.ItemsBoughtArray;
   }
-  getShoppingItems() {
+  getShoppingItems2() {
     return this.shoppingItemsArray.slice();
   }
   getShoppingItem(id: number) {
