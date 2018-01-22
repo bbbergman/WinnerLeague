@@ -13,7 +13,6 @@ export class ShoppingItemService {
   getShoppingItems(): Promise<any> {
     return this.httpService.getDataFromServer(this.shoppingItemsUrl).then((data) => {
       this.shoppingItemsArray = data;
-      return this.shoppingItemsArray.slice();
     })
       .catch(error => {
         console.log("error in get shopping items :"+error);
@@ -23,7 +22,7 @@ export class ShoppingItemService {
   getItemsBoughtArray() {
     return this.ItemsBoughtArray;
   }
-  getShoppingItems2() {
+  getShoppingItemsAfterLoading() {
     return this.shoppingItemsArray.slice();
   }
   getShoppingItem(id: number) {

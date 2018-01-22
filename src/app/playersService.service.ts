@@ -12,14 +12,13 @@ export class playersService {
   getPlayers(): Promise<any> {
     return this.httpService.getDataFromServer(this.playersUrl).then((data) => {
       this.players = data;
-      return this.players.slice();
     })
       .catch(error => {
         console.log("error in get players :"+error);
       });
   }
 
-  getPlayers2() {
+  getPlayersAfterLoading() {
     return this.players.slice();
   }
   getPlayer(i: number) {

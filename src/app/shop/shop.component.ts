@@ -14,9 +14,10 @@ export class ShopComponent implements OnInit {
   constructor(private shoppingItemService: ShoppingItemService, public modal: Modal) { }
 
   ngOnInit() {
-    this.shoppingItemService.getShoppingItems().then((data) => {
-      this.shoppingItemsArray = data;
-    });
+    // this.shoppingItemService.getShoppingItems().then((data) => {
+    //   this.shoppingItemsArray = data;
+    // });
+    this.shoppingItemsArray = this.shoppingItemService.getShoppingItemsAfterLoading();
   }
 
   addToCart(id: number) {

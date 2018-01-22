@@ -16,13 +16,12 @@ export class TeamsService {
   getTeams(): Promise<any> {
      return this.httpService.getDataFromServer(this.teamsUrl).then((data) => {
       this.teams = data;
-      return this.teams.slice();
     })
       .catch(error => {
         console.log("error in get teams :" + error);
       });
   }
-  getTeams2() {
+  getTeamsAfterLoading() {
     return this.teams.slice();
   }
   getTeam(i: number) {
