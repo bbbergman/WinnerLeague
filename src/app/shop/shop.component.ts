@@ -3,6 +3,7 @@ import {ShoppingItemService} from "../shoppingItemService.service";
 import {ShoppingItem} from "../shoppingItem.model";
 import { Overlay } from 'ngx-modialog';
 import { Modal } from 'ngx-modialog/plugins/bootstrap';
+import {StorageService} from "../storageService.service";
 
 @Component({
   selector: 'app-shop',
@@ -11,13 +12,16 @@ import { Modal } from 'ngx-modialog/plugins/bootstrap';
 })
 export class ShopComponent implements OnInit {
   public shoppingItemsArray: ShoppingItem[];
-  constructor(private shoppingItemService: ShoppingItemService, public modal: Modal) { }
+  dataFromLocalStorage;
+  constructor(private shoppingItemService: ShoppingItemService, public modal: Modal, private storageService : StorageService) { }
 
   ngOnInit() {
     // this.shoppingItemService.getShoppingItems().then((data) => {
     //   this.shoppingItemsArray = data;
     // });
-    this.shoppingItemsArray = this.shoppingItemService.getShoppingItemsAfterLoading();
+    if (this.getDataFromLocalStorage() === false) {
+      this.shoppingItemsArray = this.shoppingItemService.getShoppingItemsAfterLoading();
+    }
   }
 
   addToCart(id: number) {
@@ -29,5 +33,15 @@ export class ShopComponent implements OnInit {
       .body('')
       .open();
   }
+  onRefresh() {
+    const dataToLocalStorage = {'shoppingItems': this.shoppingItemsArray};
+    this.storageService.write('shoppingItemsData', dataToLocalStorage);
+  }
+  getDataFromLocalStorage() {
+    this.dataFromLocalStorage = this.storageService.read('shoppingItemsData');
+    if (this.dataFromLocalStorage !== null ) {
+      this.shoppingItemsArray = this.dataFromLocalStorage['shoppingItems'];
+    } else {
+      return false; }}
 
 }

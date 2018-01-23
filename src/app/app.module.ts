@@ -23,6 +23,7 @@ import { TopPlayersComponent } from './top-players/top-players.component';
 import {playersService} from "./playersService.service";
 import {HttpModule} from "@angular/http";
 import {httpService} from "./httpService.service";
+import {StorageService} from "./storageService.service";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import {httpService} from "./httpService.service";
     BootstrapModalModule,
     HttpModule
   ],
-  providers: [TeamsService, AuthService, ShoppingItemService,playersService,httpService],
+  providers: [TeamsService, AuthService, ShoppingItemService,playersService,httpService,StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

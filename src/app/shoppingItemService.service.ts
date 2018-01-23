@@ -28,6 +28,13 @@ export class ShoppingItemService {
   getShoppingItem(id: number) {
     return this.shoppingItemsArray[id];
   }
+    returnNumberOfItems() {
+    let count = 0;
+    for (const item of this.ItemsBoughtArray) {
+      count++;
+    }
+    return count;
+  }
   returnTotalPrice() {
     let sum = 0;
     for (const item of this.ItemsBoughtArray) {
