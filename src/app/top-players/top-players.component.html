@@ -3,19 +3,20 @@
   <h1> Top Players </h1>
 </div>
 <div class="flex-container">
-  <div *ngFor="let player of players; let i = index"
-       (click)="getDetails(i)">
+  <div class="flex-item" id="playerCard" *ngFor="let player of players; let i = index"
+       (click)="getDetails(i)" [ngx-scroll-to]="'#playerDetails'">
     <img class="mainImage" src="{{player.firstImageUrl}}">
     <h2>{{player.name}}</h2>
     </div>
-  <div id="playerDetails" *ngIf = "showPlayerDetails">
+  <div class="flex-item" id="playerDetails" *ngIf = "showPlayerDetails">
     <h2 id="playerHeader" [ngStyle]="{color:getFontColor(player),'background-color':getBackgroundColor(player)}">
       <img id="clubLogo" src="{{player.clubLogoUrl}}">{{ player.name}}</h2>
     <h3><strong>2017/2018 season: </strong></h3>
     <h3><strong>goals: </strong>{{player.goals}}</h3>
     <h3><strong>assists: </strong>{{player.assists}}</h3>
     <h3>{{player.bio}}</h3>
-    <div><img class="secondImage" src="{{player.secondImageUrl}}"></div>
+    <img class="secondImage" src="{{player.secondImageUrl}}">
+    <button id="scrollUpButton" [ngx-scroll-to]="'#playerCard'">Scroll up to players</button>
     </div>
   </div>
   <div (window:beforeunload)="onRefresh()"></div>

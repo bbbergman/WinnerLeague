@@ -24,3 +24,7 @@
 #contact:hover{
   color:black;
 }
+.navbar-brand{
+  color: black;
+  font-weight: bold;
+}

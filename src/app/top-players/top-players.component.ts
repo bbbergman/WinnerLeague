@@ -32,12 +32,29 @@ export class TopPlayersComponent implements OnInit {
   }
 
   getFontColor(player: player) {
-    return player.team === 'hapoel beer sheva' ? 'red' : 'yellow';
-
+    switch(player.team) {
+      case 'hapoel beer sheva':
+       return 'red';
+      case 'maccabi tel aviv':
+        return 'yellow';
+      case 'maccabi haifa':
+        return 'white';
+      case 'beitar jerusalem':
+        return 'yellow';
+    }
   }
 
   getBackgroundColor(player: player) {
-    return player.team === 'hapoel beer sheva' ? 'black' : 'darkblue';
+    switch(player.team) {
+      case 'hapoel beer sheva':
+        return 'black';
+      case 'maccabi tel aviv':
+        return 'darkblue';
+      case 'maccabi haifa':
+        return 'green';
+      case 'beitar jerusalem':
+        return 'black';
+    }
   }
 
   onRefresh() {
@@ -51,3 +68,4 @@ export class TopPlayersComponent implements OnInit {
     } else {
       return false; }}
 }
+

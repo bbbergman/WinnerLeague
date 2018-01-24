@@ -3,7 +3,7 @@
     <h1> Official Shop </h1>
   </div>
   <div class="flex-container">
-    <div id="flex-item" *ngFor="let shoppingItem of shoppingItemsArray; let i = index">
+    <div class="flex-item" *ngFor="let shoppingItem of shoppingItemsArray; let i = index">
       <img class="mainImage" src="{{shoppingItem.itemImageUrl}}">
       <h3>{{shoppingItem.itemTitle}}</h3>
       <h4>{{shoppingItem.itemDescription}}</h4>

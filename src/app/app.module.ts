@@ -24,6 +24,8 @@ import {playersService} from "./playersService.service";
 import {HttpModule} from "@angular/http";
 import {httpService} from "./httpService.service";
 import {StorageService} from "./storageService.service";
+import * as $ from 'jquery';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import {StorageService} from "./storageService.service";
     FormsModule,
     ModalModule.forRoot(),
     BootstrapModalModule,
-    HttpModule
+    HttpModule,
+    ScrollToModule.forRoot()
   ],
   providers: [TeamsService, AuthService, ShoppingItemService,playersService,httpService,StorageService],
   bootstrap: [AppComponent]

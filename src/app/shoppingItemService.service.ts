@@ -22,6 +22,9 @@ export class ShoppingItemService {
   getItemsBoughtArray() {
     return this.ItemsBoughtArray;
   }
+  setItemsBoughtArray(array) {
+    this.ItemsBoughtArray = array;
+  }
   getShoppingItemsAfterLoading() {
     return this.shoppingItemsArray.slice();
   }
