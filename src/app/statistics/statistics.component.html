@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1> Statistics </h1>
+  </div>
+  <h1>Top Scorers</h1>
+<table class="Table">
+  <tr>
+    <th></th>
+    <th>Player</th>
+    <th>Team</th>
+    <th>Goals</th>
+  </tr>
+  <tr *ngFor="let player of topScorers">
+    <td>
+      <img class="playerPicture" src="{{player.firstImageUrl}}" alt="" />
+    </td>
+    <td>{{player.name}}</td>
+    <td>{{player.team }}</td>
+    <td><strong>{{player.goals}}</strong></td>
+  </tr>
+</table>
+  <h1 >Top Assists</h1>
+  <table class="Table">
+    <tr>
+      <th></th>
+      <th>Player</th>
+      <th>Team</th>
+      <th>Assists</th>
+    </tr>
+    <tr *ngFor="let player of topAssists">
+      <td>
+        <img class="playerPicture" src="{{player.firstImageUrl}}" alt="" />
+      </td>
+      <td>{{player.name}}</td>
+      <td>{{player.team }}</td>
+      <td><strong>{{player.assists}}</strong></td>
+    </tr>
+  </table>
+</div>

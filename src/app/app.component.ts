@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
     this.teamsService.getTeams();
     this.playersService.getPlayers();
     this.shoppingItemService.getShoppingItems();
+    this.playersService.getGoalLeaders();
+    this.playersService.getAssistsLeaders();
   }
 
   onLogout() {

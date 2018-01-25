@@ -26,6 +26,7 @@ import {httpService} from "./httpService.service";
 import {StorageService} from "./storageService.service";
 import * as $ from 'jquery';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     SignInComponent,
     ShopComponent,
     CartComponent,
-    TopPlayersComponent
+    TopPlayersComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
