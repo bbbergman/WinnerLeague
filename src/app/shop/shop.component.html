@@ -2,14 +2,15 @@
   <div class="jumbotron">
     <h1> Official Shop </h1>
   </div>
+  <button class="btn btn-primary"(click)="navigateToCart()">Go to cart <span class="glyphicon glyphicon-shopping-cart"></span></button>
   <div class="flex-container">
     <div class="flex-item" *ngFor="let shoppingItem of shoppingItemsArray; let i = index">
       <img class="mainImage" src="{{shoppingItem.itemImageUrl}}">
       <h3>{{shoppingItem.itemTitle}}</h3>
       <h4>{{shoppingItem.itemDescription}}</h4>
       <h3>{{shoppingItem.itemPrice}}$</h3>
-      <button  class="btn btn-success btn-md" (click)="addToCart(i)"  >add to cart</button>
-      <span class="glyphicon glyphicon-shopping-cart"></span>
+      <button  class="btn btn-success btn-md" (click)="addToCart(i)"  >add to cart
+        <span class="glyphicon glyphicon-shopping-cart"></span></button>
     </div>
 </div>
 </div>

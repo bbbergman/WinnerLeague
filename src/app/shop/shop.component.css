@@ -17,7 +17,6 @@
   background-image:url('http://www.oktoberfest.ca/images/slideshow/2017oktoberfestcup1.jpg');
   background-size: cover;
 }
-
 @media all and (max-width: 500px) {
   .mainImage {
     height:100%;

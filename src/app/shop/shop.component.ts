@@ -4,6 +4,7 @@ import {ShoppingItem} from "../shoppingItem.model";
 import { Overlay } from 'ngx-modialog';
 import { Modal } from 'ngx-modialog/plugins/bootstrap';
 import {StorageService} from "../storageService.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-shop',
@@ -13,7 +14,8 @@ import {StorageService} from "../storageService.service";
 export class ShopComponent implements OnInit {
   public shoppingItemsArray: ShoppingItem[];
   dataFromLocalStorage;
-  constructor(private shoppingItemService: ShoppingItemService, public modal: Modal, private storageService : StorageService) { }
+  constructor(private shoppingItemService: ShoppingItemService, public modal: Modal, private storageService : StorageService,
+  private router: Router) { }
 
   ngOnInit() {
     // this.shoppingItemService.getShoppingItems().then((data) => {
@@ -44,4 +46,8 @@ export class ShopComponent implements OnInit {
     } else {
       return false; }}
 
+  navigateToCart(){
+    this.router.navigate(['cart']);
 }
+}
+

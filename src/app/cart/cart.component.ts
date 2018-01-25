@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ShoppingItem} from "../shoppingItem.model";
 import {ShoppingItemService} from "../shoppingItemService.service";
 import {StorageService} from "../storageService.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +14,8 @@ export class CartComponent implements OnInit {
   public sum: number;
   public numOfItems: number;
   dataFromLocalStorage;
-  constructor(private shoppingItemService: ShoppingItemService, private storageService : StorageService) { }
+  constructor(private shoppingItemService: ShoppingItemService, private storageService : StorageService,
+              private router: Router) { }
 
   ngOnInit() {
       this.ItemsBoughtArray = this.shoppingItemService.getItemsBoughtArray();
@@ -22,6 +24,9 @@ export class CartComponent implements OnInit {
   }
   removeFromCart(id: number) {
     this.ItemsBoughtArray.splice(id, 1);
+  }
+  navigateToShop(){
+    this.router.navigate(['shop']);
   }
   // onRefresh() {
   //   const dataToLocalStorage = {'BoughtItems': this.ItemsBoughtArray};
