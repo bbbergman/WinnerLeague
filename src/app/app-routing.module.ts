@@ -25,7 +25,8 @@ const appRoutes: Routes = [
   {path: 'shop', component: ShopComponent},
   {path: 'cart', component: CartComponent},
   {path: 'topPlayers', component: TopPlayersComponent},
-  {path: 'statistics', component: StatisticsComponent}
+  {path: 'statistics', component: StatisticsComponent},
+  {path: '**', component: WelcomeComponent}
   ];
 
 @NgModule({

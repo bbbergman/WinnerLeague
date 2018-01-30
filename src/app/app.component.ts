@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import {AuthService} from "./auth.service";
 import {playersService} from "./playersService.service";
 import {ShoppingItemService} from "./shoppingItemService.service";
+import {StorageService} from "./storageService.service";
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,19 @@ import {ShoppingItemService} from "./shoppingItemService.service";
 })
 export class AppComponent implements OnInit {
   title = '';
-  constructor(private router: Router, private routh: ActivatedRoute , public authService: AuthService ,
-              private teamsService: TeamsService , private playersService : playersService,
-              private shoppingItemService: ShoppingItemService) {}
+  dataFromLocalStorage;
+
+  constructor(private router: Router, private routh: ActivatedRoute, public authService: AuthService,
+              private teamsService: TeamsService, private playersService: playersService,
+              private shoppingItemService: ShoppingItemService, private storageService: StorageService) {
+  }
+
   ngOnInit() {
-    firebase.initializeApp({apiKey: 'AIzaSyCzxAI0qc-3qmObiUNvOWVmnu-h8_C-UIk',
-                                    authDomain: 'my-project-c46a9.firebaseapp.com'});
+    this.getDataFromLocalStorage();
+    firebase.initializeApp({
+      apiKey: 'AIzaSyCzxAI0qc-3qmObiUNvOWVmnu-h8_C-UIk',
+      authDomain: 'my-project-c46a9.firebaseapp.com'
+    });
     this.teamsService.getTeams();
     this.playersService.getPlayers();
     this.shoppingItemService.getShoppingItems();
@@ -27,6 +35,19 @@ export class AppComponent implements OnInit {
   }
 
   onLogout() {
-   this.authService.logout();
+    this.authService.logout();
+  }
+
+  onRefresh() {
+    const dataToLocalStorage = {'token': this.authService.token};
+    this.storageService.write('loginData', dataToLocalStorage);
+  }
+
+  getDataFromLocalStorage() {
+    this.dataFromLocalStorage = this.storageService.read('loginData');
+    if (this.dataFromLocalStorage !== null) {
+      this.authService.setToken(this.dataFromLocalStorage['token']);
+    }
   }
 }
+

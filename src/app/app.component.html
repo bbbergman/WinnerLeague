@@ -23,6 +23,7 @@
       <li><a id="contact" routerLink="contact"><strong>Contact</strong></a></li>
     </ul>
   </div>
+  <div (window:beforeunload)="onRefresh()"></div>
 </nav>
 <router-outlet></router-outlet>
 

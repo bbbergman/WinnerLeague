@@ -10,6 +10,9 @@ export class AuthService {
 
   constructor (private router: Router, public modal: Modal) {}
 
+  setToken(token){
+    this.token = token;
+}
   signupUser(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(
