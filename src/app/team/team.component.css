@@ -9,3 +9,8 @@
 #teamInfo{
   margin-left: 10px;
 }
+@media all and (max-width: 500px) {
+  #teamImage {
+    width: 100%;
+  }
+}

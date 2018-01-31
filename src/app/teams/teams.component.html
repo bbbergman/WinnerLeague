@@ -2,11 +2,9 @@
 <div class="jumbotron">
   <h1> Teams  </h1>
 </div>
-<hr>
   <div class="row">
   <div class="col-md-5">
   <a
-    routerLink="/teams"
     class="list-group-item clearfix"
     *ngFor="let team of teams; let i = index"
     (click)="onTeamClick(i)" [ngx-scroll-to]="'#teamInfo'">
