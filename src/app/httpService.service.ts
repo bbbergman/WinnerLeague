@@ -17,4 +17,7 @@ export class httpService {
         throw new Error(error);
       });
   }
+    storeForm(form) {
+       return this.http.post("https://my-project-c46a9.firebaseio.com/form.json",form);
+    }
 }
