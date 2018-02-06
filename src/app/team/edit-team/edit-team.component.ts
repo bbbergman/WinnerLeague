@@ -3,6 +3,7 @@ import {TeamsService} from "../../TeamsService.service";
 import {Team} from "../../team.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgForm} from "@angular/forms";
+import {httpService} from "../../httpService.service";
 
 @Component({
   selector: 'app-edit-team',
@@ -12,14 +13,14 @@ import {NgForm} from "@angular/forms";
 export class EditTeamComponent implements OnInit {
   teamToEdit: Team ;
   teamId: number;
+  teamsDataUrl ="https://my-project-c46a9.firebaseio.com/Teams";
 
-  constructor(private teamsService: TeamsService, private router: Router, private routh: ActivatedRoute ) {}
+  constructor(private teamsService: TeamsService, private router: Router, private routh: ActivatedRoute) {}
 
   ngOnInit() {
     this.teamId = this.routh.snapshot.params['id'];
     console.log(this.teamId);
     this.teamToEdit = this.teamsService.getTeam(this.teamId);
-     // this.teamsService.editTeam.subscribe((team) => this.updateTeam(team));
   }
   onSubmit(form: NgForm) {
     this.teamToEdit.status = form.value.teamStatus;
@@ -27,7 +28,7 @@ export class EditTeamComponent implements OnInit {
     this.teamToEdit.defencePlayers = form.value.defencePlayers;
     this.teamToEdit.midfieldPlayers = form.value.midfieldPlayers;
     this.teamToEdit.attackPlayers = form.value.attackPlayers;
-    // this.teamsService.updateTeam(this.teamId, this.teamToEdit);
+    this.teamsService.updateTeamsDataOnServer();
     this.router.navigate(['teams']);
 }
 

@@ -1,5 +1,6 @@
 import {Http} from "@angular/http";
 import {Injectable} from "@angular/core";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class httpService {
@@ -17,7 +18,18 @@ export class httpService {
         throw new Error(error);
       });
   }
-    storeForm(form) {
-       return this.http.post("https://my-project-c46a9.firebaseio.com/form.json",form);
+  saveDataToServer(url,data){
+    return this.http.put(url,data)
+      .catch(this.handleError);
+  }
+    storeForm(url,form) {
+       return this.http.post(url,form)
+         .catch(this.handleError);
+
     }
+
+  private handleError(error: any) {
+    console.error(error);
+    return Observable.throw(error);
+  }
 }

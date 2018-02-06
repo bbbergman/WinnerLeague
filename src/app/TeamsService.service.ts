@@ -27,9 +27,13 @@ export class TeamsService {
   getTeam(i: number) {
     return this.teams[i];
 }
-  updateTeam(teamId: number , team: Team) {
-    this.teams[teamId] = team;
-    this.teamChanged.emit(this.teams.slice());
+ updateTeamsDataOnServer(){
+    this.httpService.saveDataToServer(this.teamsUrl,this.teams)
+      .subscribe(
+      (response) => {
+        console.log(response);
+      }
+    );
 }
 }
 
